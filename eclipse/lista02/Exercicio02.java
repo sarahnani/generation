@@ -37,6 +37,8 @@ public class Exercicio02 {
 				System.out.println("O maior número é: " + n1);
 			}
 		}
+		
+		entrada.close();
 
 	}
 
