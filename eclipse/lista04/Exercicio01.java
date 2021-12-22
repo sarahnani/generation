@@ -1,30 +1,36 @@
-package br.com.generation.lista04;
+package generation.lista04;
 
 import java.util.Scanner;
 
 public class Exercicio01 {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		
 		Scanner in = new Scanner(System.in);
 		
-		int[] pontuacao = new int[5];
+		int[] vetor = new int[5];
+		int i;
 		int maiorValor = 0;
 		
-		for(int i = 0; i < pontuacao.length; i++) {
-			System.out.print("Escreva o valor da " + (i+1) + "ª pontuação: ");
-			pontuacao[i] = in.nextInt();
-			while (pontuacao[i] < 0 || pontuacao[i] > 100) {
-				System.out.println("Valor inválido!");
-				System.out.print("Escreva o valor da " + (i+1) + "ª pontuação: ");
-				pontuacao[i] = in.nextInt();
-			}
-			if (pontuacao[i] >= maiorValor) {
-				maiorValor = pontuacao[i];
+		for(i = 0; i < 5; i++) {
+			System.out.print("Digite o " + (i+1) + "º valor: ");
+			int valor = in.nextInt();
+			
+			vetor[i] = valor;
+			
+			if(valor >= maiorValor) {
+				maiorValor = valor;
 			}
 		}
-			
-		System.out.print("\nA maior pontuação é: " + maiorValor);
+		
+		System.out.print("\n==> Valores escolhidos: ");
+		for(i = 0; i < 4; i++) {
+			System.out.print(vetor[i] + ", ");
+		}
+		System.out.println(vetor[i] + ".");
+		
+		System.out.println("\n==> Maior valor: " + maiorValor + ".");
+
 		in.close();
 	}
 
